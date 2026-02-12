@@ -1,0 +1,16 @@
+name: Hello world workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps: # datatype Liste hvor alt under er objektet
+      # - uses: actions/checkout@v3 Denne er udnødvendig da der reelt ikke er noget der skal checkes out
+      - name: Run hello world
+        run: echo "Hello world"
+        shell: bash # denne er teknisk set også unødvendigt, da runs-on faktisk kører på ubuntue som er shell: bash
